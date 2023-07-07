@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgba(0, 0, 0, 0.2);
+      background-image: url('/hcbg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      top: 80%;
+    }
+
+    .typing-animation {
+      overflow: hidden;
+      white-space: wrap;
+      border-right: 1px solid;
+      animation: typing 1s steps(20, end), blink-caret 0.75s step-end infinite;
+      text-align: center;
+      font-size: 50px;
+      top: 80px;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+    }
+    .txt {
+        color: #000;
+        font-size: 20px;
+        background-color: white;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .navbar-brand {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .btn {
+        top: -20%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="container-fluid">
+            <h2 class="navbar-brand" href="#">World Bank Data</h2>
+        </div>
+    </nav>
+  <div class="container">
+    <h1 class="typing-animation">Welcome.</h1>
+    <p class="txt ">Here, you'll find information about different cities and their geographical coordinates, as well as income levels. We have some data on capital cities with latitude, cities with longitude, and cities with latitude, allowing you to explore various locations and gain insights into their geographic positioning.</p>
+    <button class="btn btn-dark" onclick="location.href='hc5.html'">Let's get started</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const textElement = document.querySelector('.typing-animation');
+      const textToType = textElement.innerText;
+      textElement.innerText = '';
+
+      let i = 0;
+      function typeText() {
+        if (i < textToType.length) {
+          textElement.innerText += textToType.charAt(i);
+          i++;
+          setTimeout(typeText, 100);
+        }
+      }
+
+      typeText();
+    });
+  </script>
+</body>
+</html>
