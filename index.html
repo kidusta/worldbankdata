@@ -7,8 +7,8 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgba(0, 0, 0, 0.2);
-      background-image: url('hcbg.jpg');
+      background-color: #95bfbc;
+      /* background-image: url('/hcbg.jpg'); */
       background-size: cover;
       background-position: center;
     }
@@ -17,8 +17,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 90vh;
-      top: 80%;
+      height: 0;
+      top: 0;
     }
 
     .typing-animation {
@@ -27,33 +27,16 @@
       border-right: 1px solid;
       animation: typing 1s steps(20, end), blink-caret 0.75s step-end infinite;
       text-align: center;
-      font-size: 50px;
+      font-size: 30px;
       top: 80px;
       color: white;
       text-shadow: 2px 2px 5px #000;
     }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes blink-caret {
-      from, to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: white;
-      }
-    }
     .txt {
-        color: #000;
+        color: white;
         font-size: 20px;
-        background-color: white;
+        text-shadow: 2px 2px 5px black;
+      
       font-size: 20px;
       text-align: center;
       margin-top: 20px;
@@ -61,45 +44,46 @@
     }
     .navbar-brand {
       font-size: 30px;
-      font-weight: bold;
+      font-weight: 700;
     }
     .btn {
         top: -20%;
       margin-top: 20px;
       margin-bottom: 20px;
+      font-size: 20px;
+      align-items: center;
     }
-
+    .txtz {
+      display:block;
+      color: white;
+    }
+    img{
+      width: 100%;
+      height: 78vh;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .main-full{
+      position: relative;
+      width: 100%;
+      height: 60vh;
+    }
   </style>
 </head>
 <body>
-    <nav>
-        <div class="container-fluid">
-            <h2 class="navbar-brand" href="#">World Bank Data</h2>
+  
+      <div class="main-full">
+        <div class="row">
+
+          <div class="col-sm-12"><img src="hcbg.jpg" alt=""></div>
         </div>
-    </nav>
-  <div class="container">
-    <h1 class="typing-animation">Welcome.</h1>
-    <p class="txt ">Here, you'll find information about different cities and their geographical coordinates, as well as income levels. We have some data on capital cities with latitude, cities with longitude, and cities with latitude, allowing you to explore various locations and gain insights into their geographic positioning.</p>
-    <button class="btn btn-dark" onclick="location.href='hc5.html'">Let's get started</button>
-  </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="txt ">Here, you'll find information about different cities and their geographical coordinates, as well as income levels. We have some data on capital cities with latitude, cities with longitude, and cities with latitude, allowing you to explore various locations and gain insights into their geographic positioning.</h2>
+            <center><button class="btn btn-dark btn2" onclick="location.href='hc10.html'">Let's get started</button></center>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const textElement = document.querySelector('.typing-animation');
-      const textToType = textElement.innerText;
-      textElement.innerText = '';
-
-      let i = 0;
-      function typeText() {
-        if (i < textToType.length) {
-          textElement.innerText += textToType.charAt(i);
-          i++;
-          setTimeout(typeText, 100);
-        }
-      }
-
-      typeText();
-    });
-  </script>
+          </div>
+        </div>
+    </div>
 </body>
 </html>
