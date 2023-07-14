@@ -4,312 +4,321 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Bank Data</title>
-  <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
-  <!-- Include Highcharts CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.1.0/css/highcharts.min.css">
-</head>
-<style>
-    /* Custom styles for the side navigation */
+  <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .sidenav {
-      position: fixed;
-      left: 0;
-      top: 70px;
-      height: 100%;
-      width: 250px;
-      z-index: 1;
-      background-color: black;
-      padding-top: 60px;
-    }
-    a {
-      text-decoration: none;
-      color: #000;
-    }
-    .sidenav a {
-      padding: 10px;
-      display: block;
-      cursor: pointer; 
-      text-decoration: none;
-      color: white;
-      background-color: black;
-    }
-  
-    .sidenav a.active {
-      font-weight: bold;
-    }
-
-    .chart-container {
-      display: none;
-      margin-left: 100px;
+      font-family: Merriweather;
+      font-weight: 200;
+      font-size: 20px;
     }
     .navbar-brand {
-      top: 0;
-      position: fixed;
-      font-size: 30px;
+      font-size: 40px;
       font-weight: bold;
     }
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .search-form {
+      margin-right: 15px;
+    }
+    .search-input {
+      width: 200px;
+    }
+    .chartCont {
+      display: none;
+      margin-top: 20px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
     .table {
-      
-      margin-left: 200px;
+      margin-top: 20px;
     }
     .txt2 {
       color: #000;
-      font-size: 20px;
-      font-size: 20px;
+      font-size: 30px;
       text-align: center;
-      margin-left: 100px;
-      
+    }
+    th {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .nav-link {
+      font-size: 20px; 
+      text-align: end;
+      justify-content: flex-end;
+
+    }
+    .item1 {
+        text-align: end;
+      align-items: flex-end;
     }
   </style>
-  
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">World Bank Data</a>
-      </div>
-    </nav>
+</head>
 
-    <!-- Side Navigation Bar -->
-    <div class="sidenav ">
-      <a class="nav-link" href="#chart1" id="link1">Capital Cities with Latitude</a>
-      <a class="nav-link" href="#chart2" id="link2">Cities with Longitude</a>
-      <a class="nav-link" href="#chart3" id="link3">Cities with Latitude</a>
-      <a class="nav-link" href="#chart4" id="link4">Cities by Region and Longitude</a>
-      <a class="nav-link" href="#chart5" id="link5">Income Levels</a>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">World Bank Data</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      
+      <div class="collapse navbar-collapse " id="navbarNavDropdown">
+        <ul class="container-fluid navbar-nav">
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="chartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              <b >Other Charts</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="chartDropdown">
+              <li><a class="dropdown-item" href="#chart1">Capital Cities with Latitude</a></li>
+              <li><a class="dropdown-item" href="#chart2">Cities with Longitude</a></li>
+              <li><a class="dropdown-item" href="#chart3">Cities with Latitude</a></li>
+              <li><a class="dropdown-item" href="#chart4">Cities by Region and Longitude</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#chart5">Income Levels</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <form class="d-flex search-form">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+
+ 
+  <section class="container mt-5">
+    <div class="chart1 ">
+        <div id="chart1" class="chartCont">
+          <h2>Capital Cities with Latitude</h2>
+        </div>
+        <div id="chart1" class="chartCont">This Pie chart shows the latitude of Kabul, Ouagadougou, Bangul, Asmara, Addis Ababa, Banjul, Bissau, Monrovia, Bamako, Niamey, Pyang, Khartoum, Freetown, Mogadishu, juba, damascus, N'Djamena, Lome, Kampala,and Sana'a. </div>
+    </div>
+
+
+    <div class="chart2">
+        <div id="chart2" class="chartCont">
+          <h2>Cities with Longitude</h2>
+        </div>
+        <div id="chart2" class="chartCont">This Chart shows the longitude of cites in Afghanistan, Burkina Faso, Congo, Dem. Rep., Ethiopia, Guinea-Bissau, Madagascar, Mozambique, Niger, Rwanda, Sierra Leone, South Sudan, Chad, and Uganda.
+        </div>
 
     </div>
-  
-    <!-- Charts Section -->
-    <section class="container mt-5">
-      <!-- Pie Chart -->
-      <div id="chart1" class="chart-container">
-        <h2>Capital Cities with Latitude</h2>
-      </div>
-  
-      <div id="chart2" class="chart-container">
-        <h2>Cities with Longitude</h2>
-      </div>
-  
-      <div id="chart3" class="chart-container">
-        <h2>Cities with Latitude (3D Donut)</h2>
-      </div>
-      
-      <div id="chart4" class="chart-container">
-        <h2>Cities by Region and Longitude</h2>
-      </div>
-  
-      <div id="chart5" class="chart-container">
-        <h2 class="txt2">Income Levels</h2>
-        <table id="table" class="table">
+
+    <div class="chart3">
+        <div id="chart3" class="chartCont">
+          <h2>Cities with Latitude</h2>
+        </div>
+        <div id="chart3" class="chartCont">This chart shows cities with latitude in Afghanistan, Burkina Faso, Central African Republic, Eritrea, Ethiopia, Gambia, The, Guinea-Bissau, Liberia, Mali, Niger, Korea, Dem. Peoples's Rep., Sudan, Sierra Leone, Somalia, South Sudan, Syrian Arab Republic, Chad, Togo, Uganda, yemen,Rep. </div>
+    </div>
+
+
+    <div class="chart4">
+        <div id="chart4" class="chartCont">
+          <h2>Cities by Region and Longitude</h2>
+        </div>
+        <div id="chart4" class="chartCont">This chart shows cities with longitude in Afghanistan, Burkina Faso, Central African Republic, Eritrea, Ethiopia, Gambia, The, Guinea-Bissau, Liberia, Mali, Niger, Korea, Dem. Peoples's Rep., Sudan, Sierra Leone, Somalia, South Sudan, Syrian Arab Republic, Chad, Togo, Uganda, yemen,Rep.</div>
+    </div>
+
+
+    <div id="chart5" class="chartCont">
+      <h2 class="txt2">Income Levels</h2>
+      <table id="table" class="table">
           <thead>
-            <tr>
-              <th>Country</th>
-              <th>Income Level</th>
-            </tr>
+            <th>Countries</th>
+            <th>Income Level</th>
           </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
-  
-    <!-- Include Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-    <!-- Include Highcharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.1.0/highcharts.min.js"></script>
-  
-    <script>
-      const links = document.querySelectorAll('.nav-link');
-links.forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-    const chartId = this.getAttribute('href').substring(1);
-    showChart(chartId);
-  });
-});
+        <th id="tableB"></th>
+      </table>
+    </div>
+  </section>
 
-        // chart visibility
-        function showChart(chartId) {
-          const charts = document.querySelectorAll('.chart-container');
-          charts.forEach(chart => {
-            if (chart.id === chartId) {
-              chart.style.display = 'block';
-            } else {
-              chart.style.display = 'none';
-            }
-          });
-        }
-      
-        // clicked link and show chart
-        function setActiveLink(link) {
-          const navLinks = document.querySelectorAll('.sidenav a');
-          navLinks.forEach(navLink => {
-            if (navLink === link) {
-              navLink.classList.add('active');
-            } else {
-              navLink.classList.remove('active');
-            }
-          });
-        }
-      
-        // Fetch data from World Bank API
-        fetch('https://api.worldbank.org/V2/incomeLevel/LIC/country?format=json')
-          .then(response => response.json())
-          .then(data => {
-            const countries = data[1];
-      
-            // Prepare data for charts and table
-            const chart1Data = [];
-            for (let i = 0; i < 5; i++) {
-              const country = countries[i];
-              chart1Data.push({
-                name: country.capitalCity,
-                lat: parseFloat(country.latitude)
-              });
-            }
-      
-            const chart2Data = [];
-            for (let i = 0; i < countries.length; i++) {
-              const country = countries[i];
-              chart2Data.push({
-                name: country.name,
-                lon: parseFloat(country.longitude)
-              });
-            }
-      
-            const chart3Data = [];
-            for (let i = 0; i < countries.length; i++) {
-              const country = countries[i];
-              chart3Data.push({
-                name: country.name,
-                lat: parseFloat(country.latitude)
-              });
-            }
-      
-            const chart4Data = [];
-            for (let i = 0; i < countries.length; i++) {
-              const country = countries[i];
-              chart4Data.push({
-                name: country.region.value,
-                lon: parseFloat(country.longitude)
-              });
-            }
-      
-            const chart5Data = [];
-            for (let i = 0; i < countries.length; i++) {
-              const country = countries[i];
-              chart5Data.push({
-                name: country.name,
-                income: country.incomeLevel.value
-              });
-            }
-      
-            // Display the first chart by default
-            showChart('chart1');
-            setActiveLink(document.querySelector('.sidenav a[href="#chart1"]'));
-      
-            // Create Pie Chart
-            Highcharts.chart('chart1', {
-              chart: {
-                type: 'pie'
-              },
-              title: {
-                text: 'Capital Cities with Latitude'
-              },
-              series: [{
-                name: 'Cities',
-                data: chart1Data.map(city => [city.name, city.lat])
-              }]
-            });
-      
-            // Create Bar Chart
-            Highcharts.chart('chart2', {
-              chart: {
-                type: 'bar'
-              },
-              title: {
-                text: 'Cities with Longitude'
-              },
-              xAxis: {
-                categories: chart2Data.map(city => city.name)
-              },
-              yAxis: {
-                title: {
-                text: 'Longitude'
-                }
-              },
-              series: [{
-                name: 'Longitude',
-                data: chart2Data.map(city => [city.name, city.lon])
-              }]
-            });
-      
-            // Create 3D Donut Chart
-            Highcharts.chart('chart3', {
-              chart: {
-                type: 'pie',
-                options3d: {
-                  enabled: true,
-                  alpha: 45
-                }
-              },
-              title: {
-                text: 'Cities with Latitude'
-              },
-              plotOptions: {
-                pie: {
-                  innerSize: 100,
-                  depth: 45
-                }
-              },
-              series: [{
-                name: 'Cities',
-                data: chart3Data.map(city => [city.name, city.lat])
-              }]
-            });
-      
-            // Create Line Bar Chart
-            Highcharts.chart('chart4', {
-              chart: {
-                type: 'column'
-              },
-              title: {
-                text: 'Cities by Region and Longitude'
-              },
-              xAxis: {
-                categories: chart4Data.map(city => city.name)
-              },
-              yAxis: {
-                title: {
-                  text: 'Longitude'
-                }
-              },
-              series: [{
-                name: 'Longitude',
-                data: chart4Data.map(city => city.lon)
-              }]
-            });
-      
-            // Create Table Chart
-            const table = document.getElementById('table');
-            chart5Data.forEach(country => {
-              const row = table.insertRow();
-              const nameCell = row.insertCell(0);
-              const incomeLevelCell = row.insertCell(1);
-              nameCell.textContent = country.name;
-              incomeLevelCell.textContent = country.income;
-            });
-          })
-          .catch(error => {
-            console.log('Error:', error);
-          });
-      </script>
-      
-  </body>
-  </html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.1.0/highcharts.min.js"></script>
 
   
+  
+  <script>
+    const links = document.querySelectorAll('.dropdown-item');
+    links.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const chartId = this.getAttribute('href').substring(1);
+        showChart(chartId);
+      });
+    });
+
+    // Chart visibility
+    function showChart(chartId) {
+      const charts = document.querySelectorAll('.chartCont');
+      charts.forEach(chart => {
+        if (chart.id === chartId) {
+          chart.style.display = 'block';
+        } else {
+          chart.style.display = 'none';
+        }
+      });
+    }
+
+    // Fetch data from World Bank API
+    fetch('https://api.worldbank.org/V2/incomeLevel/LIC/country?format=json')
+      .then(response => response.json())
+      .then(data => {
+        const countries = data[1];
+
+        // Prepare data for charts and table
+        const chart1Data = [];
+        for (let i = 0; i < countries.length; i++) {
+          const country = countries[i];
+          chart1Data.push({
+            name: country.capitalCity,
+            lat: parseFloat(country.latitude)
+          });
+        }
+
+        const chart2Data = [];
+        for (let i = 0; i < countries.length; i++) {
+          const country = countries[i];
+          chart2Data.push({
+            name: country.name,
+            lon: parseFloat(country.longitude)
+          });
+        }
+
+        const chart3Data = [];
+        for (let i = 0; i < countries.length; i++) {
+          const country = countries[i];
+          chart3Data.push({
+            name: country.name,
+            lat: parseFloat(country.latitude)
+          });
+        }
+
+        const chart4Data = [];
+        for (let i = 0; i < countries.length; i++) {
+          const country = countries[i];
+          chart4Data.push({
+            name: country.name,
+            lon: parseFloat(country.longitude)
+          });
+        }
+
+        const chart5Data = [];
+        for (let i = 0; i < countries.length; i++) {
+          const country = countries[i];
+          chart5Data.push({
+            name: country.name,
+            income: country.incomeLevel.value
+          });
+        }
+
+        // Display the first chart by default
+        showChart('chart1');
+
+               // Create Pie Chart
+        Highcharts.chart('chart1', {
+          chart: {
+            type: 'pie'
+          },
+          title: {
+            text: 'Capital Cities with Latitude'
+          },
+          series: [{
+            name: 'Cities',
+            data: chart1Data.map(city => [city.name, city.lat])
+          }]
+        });
+
+        // Create Bar Chart
+        Highcharts.chart('chart2', {
+          chart: {
+            type: 'bar'
+          },
+          title: {
+            text: 'Cities with Longitude'
+          },
+          xAxis: {
+            categories: chart2Data.map(city => city.name)
+          },
+          yAxis: {
+            title: {
+              text: 'Longitude'
+            }
+          },
+          series: [{
+            name: 'Longitude',
+            data: chart2Data.map(city => city.lon)
+          }]
+        });
+
+        // Create 3D Donut Chart
+        Highcharts.chart('chart3', {
+          chart: {
+            type: 'pie',
+            options3d: {
+              enabled: true,
+              alpha: 45
+            }
+          },
+          title: {
+            text: 'Cities with Latitude'
+          },
+          plotOptions: {
+            pie: {
+              innerSize: 100,
+              depth: 45
+            }
+          },
+          series: [{
+            name: 'Cities',
+            data: chart3Data.map(city => [city.name, city.lat])
+          }]
+        });
+
+        // Create Line Bar Chart
+        Highcharts.chart('chart4', {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Cities by Region and Longitude'
+          },
+          xAxis: {
+            categories: chart4Data.map(city => city.name)
+          },
+          yAxis: {
+            title: {
+              text: 'Longitude'
+            }
+          },
+          series: [{
+            name: 'Longitude',
+            data: chart4Data.map(city => city.lon)
+          }]
+        });
+        //table
+        const table = document.getElementById('table');
+        chart5Data.forEach(country => {
+          const row = table.insertRow();
+          const nameCell = row.insertCell(0);
+          const incomeLevelCell = row.insertCell(1);
+          nameCell.textContent = country.name;
+          incomeLevelCell.textContent = country.income;
+        });
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
+    
+
+    
+  </script>
+</body>
+</html>
